@@ -1,12 +1,17 @@
 import React, { useState } from 'react'
-import Numero from './Componentes/Numero'
+
+import Led from './Componentes/Led'
+
+import './index.css'
 
 const App = () => {
 
-    const [num, setNum] = useState(10);
-    
+    const [ligado, setLigado] = useState(false)
+
     return  (
-        <Numero num={num} setNum={setNum} />
+        <>
+            <Led ligado={ligado} setLigado={setLigado}/>
+        </>
     )
 }
 

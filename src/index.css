@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.ligado {
+  border-radius: 100%;
+  background-color: chartreuse;
+}
+
+.desligado {
+  border-radius: 100%;
+  background-color: red;
+}
