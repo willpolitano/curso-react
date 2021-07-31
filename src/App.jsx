@@ -1,26 +1,12 @@
-import React from 'react'
-import Dados from './Componentes/Dados'
+import React, { useState } from 'react'
+import Numero from './Componentes/Numero'
 
 const App = () => {
 
-    const nm = () => {
-        return 'Willian Politano Fernandes'
-    } 
-
-    const idd = '22'
-    const obj = 'Dominar React'
-
-    const soma = (v1, v2) => {
-        return v1 + v2
-    }
-
+    const [num, setNum] = useState(10);
+    
     return  (
-        <Dados 
-            nome = {nm} 
-            idade = {idd}
-            objetivo = {obj}
-            sm = {soma}
-        />
+        <Numero num={num} setNum={setNum} />
     )
 }
 
