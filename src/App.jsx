@@ -1,18 +1,18 @@
-import React, { useState } from 'react'
-
-import Led from './Componentes/Led'
+import React from 'react'
 
 import './index.css'
 
 const App = () => {
 
-    const [ligado, setLigado] = useState(false)
+const carros = ['Argo', 'Fiat', 'Megane']
+const listaCarros = carros.map((c,i) => <li key={i}>{i} - {c}</li>)
 
-    return  (
+    return (
         <>
-            <Led ligado={ligado} setLigado={setLigado}/>
+            {listaCarros}
         </>
     )
+
 }
 
 export default App;
