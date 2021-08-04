@@ -4,35 +4,28 @@ import './index.css'
 
 const App = () => {
 
-const [nome, setNome] = useState('')
-const [carro, setCarro] = useState('PORSHE')
+const [form, setForm] = useState({'nome' : '', 'curso' : '', 'ano' : ''})
 
-const handleChangeCarro = (e) => {
-    setNome(e.target.value)
+const handleChangeForm = (e) => {
+    if(e.target.getAttribute('name') == 'fnome') {
+        setForm({'nome' : e.target.value, 'curso' : form.curso, 'ano' : form.ano})
+    } else if(e.target.getAttribute('name') == 'fcurso') {
+        setForm({'nome' : form.nome, 'curso' : e.target.value, 'ano' : form.ano})
+    } else {
+        setForm({'nome' : form.nome, 'curso' : form.curso, 'ano' : e.target.value})
+    }
 }
 
 return (
     <>
-        <input 
-            type="text"
-            value={nome}
-            onChange={(e) => handleChangeCarro(e)} 
-        />
+        <input type="text" name="fnome" value={form.nome} onChange={(e) => handleChangeForm(e)} /><br/>
+        <input type="text" name="fcurso" value={form.curso} onChange={(e) => handleChangeForm(e)} /><br/>
+        <input type="text" name="fano" value={form.ano} onChange={(e) => handleChangeForm(e)} /><br/>
 
-        <p><strong>Nome: </strong> {nome}</p>
 
-        <br />
-        <br />
-        <br />
-
-        <select value={carro} onChange={(e) => setCarro(e.target.value)}>
-            <option value="HRV">HRV</option>
-            <option value="PORSHE">PORSHE</option>
-            <option value="CAMARO">CAMARO</option>
-        </select>
-
-        <p><strong>Carro: </strong> {carro}</p>
-
+        <p><strong>Nome: </strong> {form.nome}</p>
+        <p><strong>Curso: </strong> {form.curso}</p>
+        <p><strong>Ano: </strong> {form.ano}</p>
     </>
 )
 
