@@ -1,16 +1,21 @@
-import React from 'react'
-import Pai from './Componentes/Pai'
+import React, {useState, useEffect} from 'react'
 
 import './index.css'
 
 const App = () => {
 
+    const[contagem, setContagem] = useState(0)
+
+    useEffect(
+        () => {document.title = contagem}
+    )
+
+
     return (
             <>
-                <Pai>
-                    <h1>Conteudo pai</h1>
-                    <p>Conteudo da pagina App</p>
-                </Pai>
+                <p>Contagem : {contagem}</p>
+                <button onClick={() => setContagem(contagem + 1)}>Incrementar</button>
+                
             </>
     )
 }
