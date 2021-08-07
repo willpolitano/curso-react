@@ -1,34 +1,18 @@
-import React, {useState} from 'react'
+import React from 'react'
+import Pai from './Componentes/Pai'
 
 import './index.css'
 
 const App = () => {
 
-const [form, setForm] = useState({'nome' : '', 'curso' : '', 'ano' : ''})
-
-const handleChangeForm = (e) => {
-    if(e.target.getAttribute('name') == 'fnome') {
-        setForm({'nome' : e.target.value, 'curso' : form.curso, 'ano' : form.ano})
-    } else if(e.target.getAttribute('name') == 'fcurso') {
-        setForm({'nome' : form.nome, 'curso' : e.target.value, 'ano' : form.ano})
-    } else {
-        setForm({'nome' : form.nome, 'curso' : form.curso, 'ano' : e.target.value})
-    }
-}
-
-return (
-    <>
-        <input type="text" name="fnome" value={form.nome} onChange={(e) => handleChangeForm(e)} /><br/>
-        <input type="text" name="fcurso" value={form.curso} onChange={(e) => handleChangeForm(e)} /><br/>
-        <input type="text" name="fano" value={form.ano} onChange={(e) => handleChangeForm(e)} /><br/>
-
-
-        <p><strong>Nome: </strong> {form.nome}</p>
-        <p><strong>Curso: </strong> {form.curso}</p>
-        <p><strong>Ano: </strong> {form.ano}</p>
-    </>
-)
-
+    return (
+            <>
+                <Pai>
+                    <h1>Conteudo pai</h1>
+                    <p>Conteudo da pagina App</p>
+                </Pai>
+            </>
+    )
 }
 
 export default App;
